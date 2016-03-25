@@ -1,0 +1,78 @@
+<!doctype html>
+
+<!-- ASSIGN OUR ANGULAR MODULE -->
+<html ng-app="emerilOrder">
+<head>
+	<!-- META -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1"><!-- Optimize mobile viewport -->
+
+	<title>Node/Angular Food Order App</title>
+
+	<!-- SCROLLS -->
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"><!-- load bootstrap -->
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+	<style>
+		html 					{ overflow-y:scroll; }
+		body 					{ padding-top:50px; }
+		#order-list 			{ margin-bottom:30px; }
+		#order-form 	 		{ margin-bottom:50px; }
+	</style>
+
+	<!-- SPELLS -->
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script><!-- load angular -->
+
+	<script src="js/controllers/main.js"></script> <!-- load up our controller -->
+	<script src="js/services/orders.js"></script> <!-- load our order service -->
+	<script src="js/core.js"></script> <!-- load our main application -->
+
+</head>
+<!-- SET THE CONTROLLER -->
+<body ng-controller="mainController">
+	<div class="container">
+
+		<!-- HEADER AND ORDER COUNT -->
+		<div class="jumbotron text-center">
+			<h1>I'm a Foodie <span class="label label-info">{{ orders.length }}</span></h1>
+		</div>
+
+		<!-- ORDER LIST -->
+		<div id="order-list" class="row">
+			<div class="col-sm-4 col-sm-offset-4">
+
+
+
+				<!-- LOOP OVER THE ORDERS IN $scope.orders -->
+				<div class="checkbox" ng-repeat="order in orders">
+					<label>
+						<input type="checkbox" ng-click="deleteOrder(order._id)"> {{ order.name }}
+					</label>
+				</div>
+
+				<p class="text-center" ng-show="loading">
+					<span class="fa fa-spinner fa-spin fa-3x"></span>
+				</p>
+
+			</div>
+		</div>
+
+		<!-- FORM TO CREATE ORDERS -->
+		<div id="order-form" class="row">
+			<div class="col-sm-8 col-sm-offset-2 text-center">
+				<form>
+					<div class="form-group">
+
+						<!-- BIND THIS VALUE TO formData.text IN ANGULAR -->
+						<input type="text" class="form-control input-lg text-center" placeholder="Garlic Seafood Soup" ng-model="formData.name">
+					</div>
+
+					<!-- createOrder() WILL CREATE NEW ORDERS -->
+					<button type="submit" class="btn btn-primary btn-lg" ng-click="createOrder()">Add</button>
+				</form>
+			</div>
+		</div>
+
+	</div>
+
+</body>
+</html>
