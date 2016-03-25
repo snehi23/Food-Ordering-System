@@ -33,14 +33,14 @@
 
 		<!-- HEADER AND ORDER COUNT -->
 		<div class="jumbotron text-center">
-			<h1>I'm a Foodie <span class="label label-info">{{ orders.length }}</span></h1>
+			<h2> Heyy Foodie !!!<h2>
+			<h3>Order Count <span class="label label-info">{{ orders.length }}</span> <h3>
+			<h3>Total Price <span class="label label-info">{{ total }}</span> (inclusive of tax 7.5%)</h3>
 		</div>
 
 		<!-- ORDER LIST -->
 		<div id="order-list" class="row">
 			<div class="col-sm-4 col-sm-offset-4">
-
-
 
 				<!-- LOOP OVER THE ORDERS IN $scope.orders -->
 				<div class="checkbox" ng-repeat="order in orders">

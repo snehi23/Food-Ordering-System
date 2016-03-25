@@ -51,6 +51,12 @@ module.exports = function (app) {
         });
     });
 
+    // get all order's totals
+    app.get('/api/total', function (req, res) {
+        // use mongoose to get all orders in the database
+        getOrders(res);
+    });
+    
     // application -------------------------------------------------------------
     app.get('*', function (req, res) {
         res.sendFile(__dirname + '/public/index.html'); // load the single view file (angular will handle the page changes on the front-end)

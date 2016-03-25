@@ -12,6 +12,9 @@ angular.module('orderService', [])
 			},
 			delete : function(id) {
 				return $http.delete('/api/food/' + id);
+			},
+			calculate : function() {
+				return $http.get('/api/total');
 			}
 		}
 	}]);

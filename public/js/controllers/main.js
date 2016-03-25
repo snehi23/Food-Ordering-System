@@ -60,6 +60,18 @@ angular.module('orderController', [])
 						$scope.formData = {}; // clear the form so our user is ready to enter another
 						$scope.orders = data; // assign our new list of orders
 					});
+
+					Orders.calculate()
+						.success(function(data) {
+							var total = 0;
+
+							for(var i=0; i<data.length; i++)
+									total += data[i].price;
+
+							total = total + total * 0.075;
+							$scope.total = total;
+
+					});
 			}
 		};
 
@@ -74,5 +86,30 @@ angular.module('orderController', [])
 					$scope.loading = false;
 					$scope.orders = data; // assign our new list of orders
 				});
+
+				Orders.calculate()
+					.success(function(data) {
+						var total = 0;
+
+						for(var i=0; i<data.length; i++)
+								total += data[i].price;
+
+						total = total + total * 0.075;
+						$scope.total = total;
+
+				});
 		};
+
+			Orders.calculate()
+				.success(function(data) {
+					var total = 0;
+
+					for(var i=0; i<data.length; i++)
+							total += data[i].price;
+
+					total = total + total * 0.075;
+					$scope.total = total;
+
+			});
+
 	}]);
