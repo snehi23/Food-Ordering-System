@@ -4,3 +4,10 @@ Design Changes (From 'to-do'  to 'food ordering' system):
 2. Once order selected, system will enlist the choice to client with remove option.
 3. System will display count of orders and running total price (inclusive of 7.5% tax)
 of all selected food items.
+
+I was planning to create menu collection and seed it with food order list but
+due to time limitation, I follow below approach
+The system has menu JSON embedded into server module which act as on-a-fly reference collection.
+On selection order by client, server checks entry and corresponding price and push to DB.
+
+Count and Total Price of orders is calculated at each event of API call.
