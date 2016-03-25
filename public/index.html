@@ -62,8 +62,8 @@
 				<form>
 
 						<!-- BIND THIS VALUE TO formData.name IN ANGULAR -->
-					<div class="form-group">
-						<select ng-model="formData.name">
+					<div class="form-group pull-right">
+						<select class="form-control" ng-model="formData.name">
 							<option selected="true" value="">-- choose order --</option>
 							<option ng-repeat="food in foodList">{{food.name}}</option>
 						</select>

@@ -7,18 +7,38 @@ angular.module('orderController', [])
 
 		var menu = {
     'foodList': [{
-        'name': 'Burger',
-        'price': '7'
+        'name': 'Buffalo Barb Championship Wing Sauce',
+        'price': '8.49'
     }, {
-        'name': 'Sour Soup',
-        'price': '4.5'
+        'name': 'Home-Grown Guacamole',
+        'price': '4.99'
     }, {
-        'name': 'Salad',
-        'price': '6'
-    }],
+        'name': 'Famous Barbecue Chicken',
+        'price': '6.99'
+    },
+		{
+				'name': 'Jack It Up Burger',
+				'price': '7.69'
+		},
+		{
+        'name': 'Blushing Maine Lobster Cakes',
+        'price': '9.89'
+    },
+		{
+				'name': 'Garlic Seafood Soup',
+				'price': '4.79'
+		},
+		{
+				'name': 'Original Banana Split',
+				'price': '3.49'
+		},
+		{
+				'name': 'Chocolate Crème Brulee with Blackberries',
+				'price': '5.49'
+		}],
     'valueSelected': {
-        'name': 'Salad',
-        'price': '6'
+        'name': 'Famous Barbecue Chicken',
+        'price': '6.99'
     }
 }
 
@@ -69,7 +89,7 @@ angular.module('orderController', [])
 									total += data[i].price;
 
 							total = total + total * 0.075;
-							$scope.total = total;
+							$scope.total = total.toFixed(2);
 
 					});
 			}
@@ -95,7 +115,7 @@ angular.module('orderController', [])
 								total += data[i].price;
 
 						total = total + total * 0.075;
-						$scope.total = total;
+						$scope.total = total.toFixed(2);
 
 				});
 		};
@@ -108,7 +128,7 @@ angular.module('orderController', [])
 							total += data[i].price;
 
 					total = total + total * 0.075;
-					$scope.total = total;
+					$scope.total = total.toFixed(2);
 
 			});
 
