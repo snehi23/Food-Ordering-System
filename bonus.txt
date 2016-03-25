@@ -1,0 +1,7 @@
+Design Changes (From 'to-do'  to 'food ordering' system):
+
+1. Food ordering system will pre-populate the list of orders with price to client.
+2. Once order selected, system will enlist the choice to client with remove option.
+3. System will display count of orders and running total price (inclusive of 7.5% tax)
+of all selected food items.
+4.  

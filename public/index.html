@@ -35,7 +35,7 @@
 		<div class="jumbotron text-center">
 			<h2> Heyy Foodie !!!<h2>
 			<h3>Order Count <span class="label label-info">{{ orders.length }}</span> <h3>
-			<h3>Total Price <span class="label label-info">{{ total }}</span> (inclusive of tax 7.5%)</h3>
+			<h3>Total Price <span class="label label-info">{{ total }}</span> (inclusive of 7.5% tax)</h3>
 		</div>
 
 		<!-- ORDER LIST -->
@@ -64,8 +64,8 @@
 						<!-- BIND THIS VALUE TO formData.name IN ANGULAR -->
 					<div class="form-group pull-right">
 						<select class="form-control" ng-model="formData.name">
-							<option selected="true" value="">-- choose order --</option>
-							<option ng-repeat="food in foodList">{{food.name}}</option>
+							<option selected="true" value="">-- choose your order --</option>
+							<option ng-repeat="food in foodList" value="{{food.name}}">{{food.name}} (${{food.price}})</option>
 						</select>
 					</div>
 

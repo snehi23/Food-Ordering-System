@@ -81,17 +81,7 @@ angular.module('orderController', [])
 						$scope.orders = data; // assign our new list of orders
 					});
 
-					Orders.calculate()
-						.success(function(data) {
-							var total = 0;
-
-							for(var i=0; i<data.length; i++)
-									total += data[i].price;
-
-							total = total + total * 0.075;
-							$scope.total = total.toFixed(2);
-
-					});
+					$scope.getTotal();
 			}
 		};
 
@@ -107,29 +97,22 @@ angular.module('orderController', [])
 					$scope.orders = data; // assign our new list of orders
 				});
 
-				Orders.calculate()
-					.success(function(data) {
-						var total = 0;
-
-						for(var i=0; i<data.length; i++)
-								total += data[i].price;
-
-						total = total + total * 0.075;
-						$scope.total = total.toFixed(2);
-
-				});
+				$scope.getTotal();
 		};
 
+		// calculate Total price using total API
+		$scope.getTotal = function() {
 			Orders.calculate()
 				.success(function(data) {
 					var total = 0;
-
+					// sum up all prices of orders
 					for(var i=0; i<data.length; i++)
 							total += data[i].price;
-
+					// 7.5% tax included
 					total = total + total * 0.075;
 					$scope.total = total.toFixed(2);
 
 			});
+		};
 
 	}]);
