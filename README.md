@@ -23,8 +23,9 @@ Node provides the RESTful API. Angular provides the front end and accesses the A
 
 1. Clone the repository: `git clone https://github.com/snehi23/Food-Ordering-System.git`
 2. Install the application: `npm install`
-3. Start the server: `node server.js`
-4. View in browser at `http://localhost:8080`
+3. Start local MongoDB instance (e.g. For OSX use command: `mongod` in terminal to start it)
+4. Start the server: `node server.js`
+5. View in browser at `http://localhost:8080`
 
 ## API Documentation
 
