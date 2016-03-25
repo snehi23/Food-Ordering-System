@@ -7,24 +7,27 @@ Node provides the RESTful API. Angular provides the front end and accesses the A
 
 ## Required
 
-[node and npm] (runtime environment + package manager)
-[mongodb] (database server)
+[node and npm] (http://nodejs.org)
+[mongodb] (https://www.mongodb.org/)
 
 ## Optional
-[git] (version control + Windows cURL)
-[sublime, atom, webstorm] (editors)
-[json formatter] (JSON formatter in browser)
-[curl] (HTTP request tests for Mac/Linux)
-[postman] (HTTP request tests in browser)
-[mongobooster] (MongoDB client)
+
+[git] (https://github.com/)
+[atom] (https://atom.io/)
+[json formatter] (http://jsonlint.com/)
+[curl] (https://curl.haxx.se/)
+[postman] (https://www.getpostman.com/)
+[mongobooster] (http://mongobooster.com/)
 
 ## Installation
+
 1. Clone the repository: `git clone https://github.com/snehi23/Food-Ordering-System.git`
 2. Install the application: `npm install`
 3. Start the server: `node server.js`
 4. View in browser at `http://localhost:8080`
 
 ## API Documentation
+
 HTTP      Verb	URL	           Description
 GET	      /api/food	           Get all of the food items in the order
 POST	    /api/food	           Create a single food item
