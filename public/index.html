@@ -60,10 +60,13 @@
 		<div id="order-form" class="row">
 			<div class="col-sm-8 col-sm-offset-2 text-center">
 				<form>
-					<div class="form-group">
 
-						<!-- BIND THIS VALUE TO formData.text IN ANGULAR -->
-						<input type="text" class="form-control input-lg text-center" placeholder="Garlic Seafood Soup" ng-model="formData.name">
+						<!-- BIND THIS VALUE TO formData.name IN ANGULAR -->
+					<div class="form-group">
+						<select ng-model="formData.name">
+							<option selected="true" value="">-- choose order --</option>
+							<option ng-repeat="food in foodList">{{food.name}}</option>
+						</select>
 					</div>
 
 					<!-- createOrder() WILL CREATE NEW ORDERS -->

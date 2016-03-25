@@ -24,10 +24,10 @@ module.exports = function (app) {
 
     // create order and send back all orders after creation
     app.post('/api/food', function (req, res) {
-
         // create a order, information comes from AJAX request from Angular
         FoodOrder.create({
             name: req.body.name,
+            price: req.body.price,
             done: false
         }, function (err, order) {
             if (err)
